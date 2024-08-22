@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
  * @author aguse
  */
 public class Persona {
-    private String nombre;
+  private String nombre;
   private String apellido;
   private int edad;
   private double altura;

@@ -12,7 +12,7 @@ import java.time.LocalTime;
  * @author aguse
  */
 public class Reloj {
-     private String dia;
+    private String dia;
     private String hora;
     private long numSerie;
     private String modelo;

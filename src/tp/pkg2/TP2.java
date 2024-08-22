@@ -18,16 +18,19 @@ public class TP2 {
       
         Persona p = new Persona("Marco","Rodriguez",55,180);
         
-        Reloj r = new Reloj(123,"Samsung");
+        RelojFit r = new RelojFit(123,"Samsung");
         
+        System.out.println("hora actual:");
         p.setUnReloj(r);
-        
         p.decirHora(r);
         
+        System.out.println("2 horas adelantada:");
         r.incrementarHora(2);
-        
         p.decirHora(r);
         
+        r.cuentaPasos(8, 12);
+        System.out.println("pasos:"+r.getPasos());
+        r.frecuenciaAleatoria();
         
     }
     
