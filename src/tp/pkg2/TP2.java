@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package tp.pkg2;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.util.Scanner;
+import java.util.InputMismatchException;
 /**
  *
  * @author dylan
@@ -15,7 +15,7 @@ public class TP2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      
+        
         Persona p = new Persona("Marco","Rodriguez",55,180);
         
         RelojFit r = new RelojFit(123,"Samsung");
@@ -24,12 +24,35 @@ public class TP2 {
         p.setUnReloj(r);
         p.decirHora(r);
         
-        System.out.println("2 horas adelantada:");
-        r.incrementarHora(2);
-        p.decirHora(r);
+        Scanner scanner = new Scanner(System.in);
+        try {
+            
+        System.out.print("¿Cuantas horas quisiera adelantar? ");
         
-        r.cuentaPasos(8, 12);
+        int horasAdelantar = scanner.nextInt();
+        
+        System.out.println("Cantidad de horas adelantadas:");
+        r.incrementarHora(horasAdelantar);
+        p.decirHora(r);
+        } catch (InputMismatchException e) {
+            System.out.println("Ingrese un numero correcto!.");
+            scanner.next(); 
+        }
+        try {
+        System.out.print("¿Para calcular los pasos ingrese X e Y ? ");
+        System.out.println("X:");
+        int x = scanner.nextInt();
+        System.out.println("Y:");
+        int y = scanner.nextInt();
+        
+        
+        r.cuentaPasos(x, y);
         System.out.println("pasos:"+r.getPasos());
+        } catch (InputMismatchException e) {
+        System.out.println("Ingrese un numero correcto!.");
+        scanner.next();
+        }  
+         
         r.frecuenciaAleatoria();
         
     }

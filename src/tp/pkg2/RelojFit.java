@@ -21,7 +21,7 @@ public class RelojFit extends Reloj{
     }
     
     public void cuentaPasos(int x, int y){
-        this.pasos = pasos + Math.abs(x - y);
+        this.pasos = pasos + Math.abs(x + y);
     }
     
     public void frecuenciaAleatoria(){
